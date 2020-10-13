@@ -13,4 +13,5 @@ target 'IamDemo' do
   pod 'SDWebImage'
   pod 'IQKeyboardManagerSwift'
   pod 'Alamofire'
+  pod 'SwiftLint'
 end
