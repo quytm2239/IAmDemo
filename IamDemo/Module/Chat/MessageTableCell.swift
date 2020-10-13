@@ -13,7 +13,7 @@ class MessageTableCell: UITableViewCell {
     @IBOutlet weak var labelName: UILabel!
     @IBOutlet weak var labelMsg: UILabel!
     @IBOutlet weak var labelTime: UILabel!
-    
+
     override func awakeFromNib() {
         super.awakeFromNib()
         imageAvatar.layer.cornerRadius = imageAvatar.bounds.height / 2
@@ -23,5 +23,5 @@ class MessageTableCell: UITableViewCell {
     override func setSelected(_ selected: Bool, animated: Bool) {
         super.setSelected(selected, animated: animated)
     }
-    
+
 }

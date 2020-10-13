@@ -8,10 +8,9 @@
 import UIKit
 
 class AutoScrollUpTableView: UITableView {
-    
+
     override func reloadData() {
         super.reloadData()
-        
-        
+
     }
 }

@@ -9,40 +9,53 @@ import Foundation
 import RxCocoa
 import RxSwift
 import Alamofire
-import MBProgressHUD
 
-class TermViewModel {
-    
-    let bag = DisposeBag()
-    
-    var year: BehaviorRelay<Int> = BehaviorRelay<Int>(value: 0)
+struct TermViewModelInput {
+    var year: BehaviorRelay<String?> = BehaviorRelay<String?>(value: nil)
+    var check: PublishRelay<Void> = PublishRelay<Void>()
+}
+
+struct TermViewModelOutput {
     var isValidAge: BehaviorRelay<Bool> = BehaviorRelay<Bool>(value: false)
     var error: BehaviorRelay<String> = BehaviorRelay<String>(value: "")
+}
+
+class TermViewModel {
+
+    let bag = DisposeBag()
+
+    var input = TermViewModelInput()
+    var output = TermViewModelOutput()
 
     init() {
-        configRelay()
         configAction()
     }
-    
-    func configRelay() {
-        year = BehaviorRelay<Int>(value: 0)
-        isValidAge = BehaviorRelay<Bool>(value: false)
-        error = BehaviorRelay<String>(value: "")
-    }
-    
-    func configAction() {
-        year.skip(1).bind(onNext: { (year) in
-            AF.request(SocketIOCenter.baseUrl + "/check-age", method: .post, parameters: ["year": year], encoder: URLEncodedFormParameterEncoder.default, headers: HTTPHeaders(["Content-type" : "application/x-www-form-urlencoded"]), interceptor: nil, requestModifier: nil).responseJSON {[unowned self] (dataRes) in
+
+    private func configAction() {
+        input.check.bind(onNext: { [weak self] in
+            guard let rawYear = self?.input.year.value, let year = Int(rawYear) else { return }
+            CustomLoading.show()
+            AF.request(
+                SocketIOCenter.baseUrl + "/check-age",
+                method: .post,
+                parameters: ["year": year],
+                encoder: URLEncodedFormParameterEncoder.default,
+                headers: HTTPHeaders(["Content-type": "application/x-www-form-urlencoded"]),
+                interceptor: nil, requestModifier: nil)
+                .responseJSON {[weak self] (dataRes) in
                 print(dataRes)
                 CustomLoading.hide()
                 if let json = dataRes.value as? [String: Any], let success = json["success"] as? Bool {
-                    self.isValidAge.accept(success)
-                    if let error = json["error"] as? String , !success {
-                        self.error.accept(error)
+                    self?.output.isValidAge.accept(success)
+                    if let error = json["error"] as? String, !success {
+                        self?.output.error.accept(error)
                     }
                 }
             }
-            
         }).disposed(by: bag)
+    }
+    
+    deinit {
+        print("TermViewModel deinit")
     }
 }

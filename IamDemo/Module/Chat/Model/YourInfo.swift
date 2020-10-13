@@ -7,9 +7,20 @@
 
 import Foundation
 
-class YourInfo: Codable  {
-    var room = ""
+struct YourInfo: Codable {
+    var room = 0
     var username = ""
     var avatar = ""
-    var total_online = 0
+    var totalOnline = 0
+
+    enum CodingKeys: String, CodingKey {
+        case room
+        case username
+        case avatar
+        case totalOnline = "total_online"
+    }
+
+    func toString() -> String {
+        return "\(username) has joined room: \(room), total online: \(totalOnline)"
+    }
 }

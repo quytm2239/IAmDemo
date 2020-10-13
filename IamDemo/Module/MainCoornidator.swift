@@ -16,16 +16,14 @@ class MainCoordinator: Coordinator {
     }
 
     func start() {
-        let vc = TermScreen()
-        vc.coordinator = self
-        vc.setViewModel(TermViewModel())
-        navigationController.pushViewController(vc, animated: false)
+        let screen = TermScreen(viewModel: TermViewModel())
+        screen.coordinator = self
+        navigationController.pushViewController(screen, animated: false)
     }
-    
+
     func openChatScreen() {
-        let vc = ChatScreen()
-        vc.coordinator = self
-        vc.setViewModel(ChatViewModel()) // DI
-        navigationController.pushViewController(vc, animated: true)
+        let screen = ChatScreen(viewModel: ChatViewModel())
+        screen.coordinator = self
+        navigationController.pushViewController(screen, animated: true)
     }
 }

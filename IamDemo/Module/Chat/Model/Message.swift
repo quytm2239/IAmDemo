@@ -6,9 +6,13 @@
 //
 import Foundation
 
-class Message: Codable  {
+struct Message: Codable {
     var username = ""
     var message = ""
     var avatar = ""
     var time: Int64 = 0
+
+    mutating func update(_ username: String) {
+        self.username = username
+    }
 }

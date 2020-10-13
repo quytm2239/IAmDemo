@@ -9,28 +9,30 @@ import UIKit
 import RxSwift
 
 class BaseScreen: UIViewController {
-    
+
     let bag = DisposeBag()
-    
+
     override func viewDidLoad() {
         super.viewDidLoad()
-        
-//        navigationController?.setNavigationBarHidden(true, animated: false)
         setupBasic()
-        configRelay()
-        configAction()
         setupUI()
         setupUIConstraint()
+        bindInput()
+        bindOutput()
     }
-    
-    // MARK: -- For overriding purpose --
+
+    // MARK: - For overriding purpose
     func setupBasic() {}
-    
-    func configRelay() {}
-    
-    func configAction() {}
-    
+
+    func bindInput() {}
+
+    func bindOutput() {}
+
     func setupUI() {}
-    
+
     func setupUIConstraint() {}
+
+    deinit {
+        print("\(self.objectName) deinit")
+    }
 }

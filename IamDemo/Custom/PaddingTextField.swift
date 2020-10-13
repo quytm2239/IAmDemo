@@ -8,17 +8,17 @@
 import UIKit
 
 class PaddingTextField: UITextField {
-    struct Constants {
-        static let sidePadding: CGFloat = 8
-        static let topPadding: CGFloat = 0
+    struct Padding {
+        static let horizontal: CGFloat = 8
+        static let vertical: CGFloat = 0
     }
 
     override func textRect(forBounds bounds: CGRect) -> CGRect {
         return CGRect(
-            x: bounds.origin.x + Constants.sidePadding,
-            y: bounds.origin.y + Constants.topPadding,
-            width: bounds.size.width - Constants.sidePadding * 2,
-            height: bounds.size.height - Constants.topPadding * 2
+            x: bounds.origin.x + Padding.horizontal,
+            y: bounds.origin.y + Padding.vertical,
+            width: bounds.size.width - Padding.horizontal * 2,
+            height: bounds.size.height - Padding.vertical * 2
         )
     }
 
