@@ -14,4 +14,5 @@ target 'IamDemo' do
   pod 'IQKeyboardManagerSwift'
   pod 'Alamofire'
   pod 'SwiftLint'
+  pod 'RealmSwift'
 end

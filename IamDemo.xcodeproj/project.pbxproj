@@ -18,6 +18,7 @@
 		FE36B478252479F20061DCBD /* SocketIOCenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = FE36B477252479F20061DCBD /* SocketIOCenter.swift */; };
 		FE36B490252491E30061DCBD /* TermViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = FE36B48F252491E30061DCBD /* TermViewModel.swift */; };
 		FE36B4B2252495680061DCBD /* BaseScreen.swift in Sources */ = {isa = PBXBuildFile; fileRef = FE36B4B1252495680061DCBD /* BaseScreen.swift */; };
+		FE77CC672556EEB500709910 /* RealmDB.swift in Sources */ = {isa = PBXBuildFile; fileRef = FE77CC662556EEB500709910 /* RealmDB.swift */; };
 		FEA5959025251CB60049D29F /* ChatViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = FEA5958F25251CB60049D29F /* ChatViewModel.swift */; };
 		FEA5959525251EDF0049D29F /* Message.swift in Sources */ = {isa = PBXBuildFile; fileRef = FEA5959425251EDF0049D29F /* Message.swift */; };
 		FEA59599252520C50049D29F /* YourInfo.swift in Sources */ = {isa = PBXBuildFile; fileRef = FEA59598252520C50049D29F /* YourInfo.swift */; };
@@ -49,6 +50,7 @@
 		FE36B477252479F20061DCBD /* SocketIOCenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SocketIOCenter.swift; sourceTree = "<group>"; };
 		FE36B48F252491E30061DCBD /* TermViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TermViewModel.swift; sourceTree = "<group>"; };
 		FE36B4B1252495680061DCBD /* BaseScreen.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseScreen.swift; sourceTree = "<group>"; };
+		FE77CC662556EEB500709910 /* RealmDB.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RealmDB.swift; sourceTree = "<group>"; };
 		FEA5958F25251CB60049D29F /* ChatViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChatViewModel.swift; sourceTree = "<group>"; };
 		FEA5959425251EDF0049D29F /* Message.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Message.swift; sourceTree = "<group>"; };
 		FEA59598252520C50049D29F /* YourInfo.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = YourInfo.swift; sourceTree = "<group>"; };
@@ -194,6 +196,7 @@
 			isa = PBXGroup;
 			children = (
 				FE36B477252479F20061DCBD /* SocketIOCenter.swift */,
+				FE77CC662556EEB500709910 /* RealmDB.swift */,
 			);
 			path = Service;
 			sourceTree = "<group>";
@@ -347,6 +350,7 @@
 				FE36B478252479F20061DCBD /* SocketIOCenter.swift in Sources */,
 				FE36B43A2524671B0061DCBD /* SceneDelegate.swift in Sources */,
 				FE36B490252491E30061DCBD /* TermViewModel.swift in Sources */,
+				FE77CC672556EEB500709910 /* RealmDB.swift in Sources */,
 				FE36B46E252471FA0061DCBD /* ChatScreen.swift in Sources */,
 				FEA595B125252C700049D29F /* StringExtension.swift in Sources */,
 				FEA595B525252CD10049D29F /* MessageTableCell.swift in Sources */,

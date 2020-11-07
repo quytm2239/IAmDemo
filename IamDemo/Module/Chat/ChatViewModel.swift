@@ -59,6 +59,11 @@ class ChatViewModel: ChatViewModelOutPuts, ChatViewModelInputs, ChatViewModelTyp
             }
         }).disposed(by: bag)
     }
+    
+    func loadMessage() {
+        let result: [Message] = RealmDB.shared.get()
+        self.msgList.accept(result)
+    }
 
     deinit {
         print("ChatViewModel deinit")
@@ -69,7 +74,7 @@ extension ChatViewModel: SocketIOCenterDelegate {
     func onEvent(name: EventName, data: [Any]?) {
 
         guard let data = data, !data.isEmpty else { return }
-        guard let dict = data[0] as? [String: Any]else { return }
+        guard let dict = data[0] as? [String: Any] else { return }
         guard let theJSONData = try?  JSONSerialization.data(
             withJSONObject: dict,
             options: .prettyPrinted
@@ -79,20 +84,21 @@ extension ChatViewModel: SocketIOCenterDelegate {
         case .yourInfo:
             guard let yourInfo = try? JSONDecoder()
                     .decode(YourInfo.self, from: theJSONData) else { return }
+            username = yourInfo.username ?? ""
             self.userInfo.accept(yourInfo)
 
         case .newMessage:
-            guard var message = try? JSONDecoder()
+            guard let message = try? JSONDecoder()
                     .decode(Message.self, from: theJSONData) else { return }
             if message.username == self.username {
                 message.update("\(message.username) (You)")
             }
+            RealmDB.shared.persist(message)
             let new = msgList.value + [message]
             self.msgList.accept(new)
 
         case .joinChat:
             let userInfo = try? JSONDecoder().decode(YourInfo.self, from: theJSONData)
-            username = userInfo?.username ?? ""
             print(userInfo?.toString())
         }
     }

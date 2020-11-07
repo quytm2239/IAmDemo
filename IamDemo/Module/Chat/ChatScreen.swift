@@ -69,6 +69,8 @@ class ChatScreen: BaseScreen, UIScrollViewDelegate {
     // MARK: - Lifecycle
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        viewModel.loadMessage()
     }
 
     override func viewWillAppear(_ animated: Bool) {
