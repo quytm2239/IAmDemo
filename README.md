@@ -16,7 +16,7 @@ This project is simple Group Chat app iOS app. User can access website: https://
 ## Technologies
 Project is created with:
   - Alamofire (5.2.2)
-  - RealmSwift (10.1.2)
+  - RealmSwift (10.1.2) (this is for message-caching demo)
   - RxSwift (5.1.1)
   - SDWebImage (5.9.2)
   - SnapKit (5.0.1)
