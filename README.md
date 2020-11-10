@@ -14,7 +14,8 @@ IAmDemo requires iOS 14.0 or later. If you are developer, you can set its `deplo
 This project is simple Group Chat app iOS app. User can access website: https://strange-chat.herokuapp.com/ to chat with others on this app. As a developer, you can test IAmDemo integration with another platform, such as: `web`. This web https://strange-chat.herokuapp.com/ is also created by me with using Nodejs and is deployed on Heroku.
 	
 ## Technologies
-Project is created with:
+This project is created following MVVM pattern.
+And these below iOS library:
   - Alamofire (5.2.2)
   - RealmSwift (10.1.2) (this is for message-caching demo)
   - RxSwift (5.1.1)
