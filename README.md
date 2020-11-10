@@ -9,6 +9,7 @@ IAmDemo requires iOS 14.0 or later. If you are developer, you can set its `deplo
 * [General info](#general-info)
 * [Technologies](#technologies)
 * [How to run](#how-to-run)
+* [Contribution](#contribution)
 
 ## General info
 This project is simple Group Chat app iOS app. User can access website: https://strange-chat.herokuapp.com/ to chat with others on this app. As a developer, you can test IAmDemo integration with another platform, such as: `web`. This web https://strange-chat.herokuapp.com/ is also created by me with using Nodejs and is deployed on Heroku.
@@ -39,3 +40,8 @@ $ pod install (wait a bit to let cocoapod download/install library and generate 
   - Open browser then access this link: https://strange-chat.herokuapp.com/
   - Go back to your app (which are running on iOS Simulator), enter your year of birth (require 1940-2004), click `Tap to join`.
   - If your year of birth is valid, you will be navigated to Chat screen. You can freely chat with user on web or another iOS client from now.
+  
+## Contribution
+If you have anything to upgrade this project, feel free to contact me via email: `quytm2239@gmail.com` or skype: `tranquy230`.
+
+Thank you!
