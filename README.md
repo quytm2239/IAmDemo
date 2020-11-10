@@ -42,6 +42,6 @@ $ pod install (wait a bit to let cocoapod download/install library and generate 
   - If your year of birth is valid, you will be navigated to Chat screen. You can freely chat with user on web or another iOS client from now.
   
 ## Contribution
-If you have anything to upgrade this project, feel free to contact me via email: `quytm2239@gmail.com` or skype: `tranquy230`.
+If you have anything to upgrade this project, feel free to contact me via email: `quytm2239@gmail.com` or skype: `tranquy239`.
 
 Thank you!
