@@ -27,7 +27,7 @@ struct CustomData: SocketData {
 class SocketIOCenter {
     // MARK: - Properties
     public static let shared = SocketIOCenter()
-    static let baseUrl = "https://strange-chat.herokuapp.com"
+    static let baseUrl = "https://strange-chat2.herokuapp.com"
 
     private let manager: SocketManager
     private let socket: SocketIOClient
