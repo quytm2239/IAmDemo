@@ -37,7 +37,7 @@ $ cd [path of directory that contains IamDemo.xcodeproj and podfile]
 $ pod install (wait a bit to let cocoapod download/install library and generate pod project for IAmDemo)
 ```
   - Open `IamDemo.xcworkspace` by XCode, click Run/CMD+R to build and run this project by XCode.
-  - Open browser then access this link: https://strange-chat.herokuapp.com/
+  - Open browser then access this link: https://strange-chat2.herokuapp.com/
   - Go back to your app (which are running on iOS Simulator), enter your year of birth (require 1940-2004), click `Tap to join`.
   - If your year of birth is valid, you will be navigated to Chat screen. You can freely chat with user on web or another iOS client from now.
   
